@@ -60,10 +60,10 @@ if ( ! function_exists( 'oberon_setup' ) ) :
 		) );
 
 		// Set up the WordPress core custom background feature.
-		add_theme_support( 'custom-background', apply_filters( 'oberon_custom_background_args', array(
-			'default-color' => 'ffffff',
-			'default-image' => '',
-		) ) );
+		// add_theme_support( 'custom-background', apply_filters( 'oberon_custom_background_args', array(
+		// 	'default-color' => 'ffffff',
+		// 	'default-image' => '',
+		// ) ) );
 
 		// Add theme support for selective refresh for widgets.
 		add_theme_support( 'customize-selective-refresh-widgets' );
@@ -103,26 +103,32 @@ add_action( 'after_setup_theme', 'oberon_content_width', 0 );
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function oberon_widgets_init() {
-	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'oberon' ),
-		'id'            => 'sidebar-1',
-		'description'   => esc_html__( 'Add widgets here.', 'oberon' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
-}
-add_action( 'widgets_init', 'oberon_widgets_init' );
+// function oberon_widgets_init() {
+// 	register_sidebar( array(
+// 		'name'          => esc_html__( 'Sidebar', 'oberon' ),
+// 		'id'            => 'sidebar-1',
+// 		'description'   => esc_html__( 'Add widgets here.', 'oberon' ),
+// 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+// 		'after_widget'  => '</section>',
+// 		'before_title'  => '<h2 class="widget-title">',
+// 		'after_title'   => '</h2>',
+// 	) );
+// }
+// add_action( 'widgets_init', 'oberon_widgets_init' );
 
 /**
  * Enqueue scripts and styles.
  */
 function oberon_scripts() {
-	wp_enqueue_style( 'oberon-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'oberon-style', get_stylesheet_uri(), array(), '2.2' );
 
-	wp_enqueue_script( 'oberon-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), '20151215', true );
+	if ( !class_exists( 'flbuilder' ) ) {
+		wp_enqueue_style( 'oberon-fontawesome', "https://use.fontawesome.com/releases/v5.8.1/css/all.css" );
+	}
+
+	// wp_enqueue_script( 'oberon-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), '20151215', true );
+
+	wp_enqueue_script( 'oberon-popup-scripts', get_template_directory_uri() . '/assets/js/popup.js', array(), '20151215', true );
 
 	wp_enqueue_script( 'oberon-skip-link-focus-fix', get_template_directory_uri() . '/assets/js/skip-link-focus-fix.js', array(), '20151215', true );
 
@@ -135,7 +141,7 @@ add_action( 'wp_enqueue_scripts', 'oberon_scripts' );
 /**
  * Implement the Custom Header feature.
  */
-require get_template_directory() . '/inc/custom-header.php';
+// require get_template_directory() . '/inc/custom-header.php';
 
 /**
  * Custom template tags for this theme.
@@ -163,5 +169,72 @@ if ( defined( 'JETPACK__VERSION' ) ) {
  * Load WooCommerce compatibility file.
  */
 if ( class_exists( 'WooCommerce' ) ) {
-	require get_template_directory() . '/inc/woocommerce.php';
+	require get_template_directory() . '/inc/woocommerce/woocommerce.php';
+	require get_template_directory() . '/inc/woocommerce/woocommerce-functions.php';
 }
+
+// acf
+require get_theme_file_path( 'inc/acf.php' );
+
+/**
+ * Load beaver builder compatibility file.
+ */
+if ( class_exists( 'flbuilder' ) ) {
+	require get_template_directory() . '/inc/beaverbuilder/beaverbuilder.php';
+}
+
+if ( class_exists( 'flbuilder' ) && class_exists( 'FLThemeBuilder' ) ) {
+	require get_template_directory() . '/inc/beaverbuilder/beaver-themer.php';
+}
+
+
+/**
+ * Add shortcodes
+ */
+
+ require get_theme_file_path( 'inc/shortcodes.php' );
+
+
+/**
+ * Load Kirki compatibility file.
+ */
+ include_once get_theme_file_path( 'inc/kirki/class-kirki-installer-section.php' );
+
+ if ( class_exists( 'kirki' ) ) {
+
+	 require get_theme_file_path( 'inc/kirki/kirki-setup.php' );
+	 // require get_theme_file_path( 'inc/kirki/kirki-customize.php' );
+	 // require get_theme_file_path( 'inc/kirki/kirki-headers.php' );
+	 require get_theme_file_path( 'inc/kirki/kirki-layout.php' );
+	 require get_theme_file_path( 'inc/kirki/kirki-sidebar.php' );
+	 require get_theme_file_path( 'inc/kirki/kirki-typography.php' );
+	 require get_theme_file_path( 'inc/kirki/kirki-colors.php' );
+	 require get_theme_file_path( 'inc/kirki/kirki-button.php' );
+	 require get_theme_file_path( 'inc/kirki/kirki-fields.php' );
+	 require get_theme_file_path( 'inc/kirki/kirki-mobile-menu.php' );
+	 require get_theme_file_path( 'inc/kirki/kirki-code.php' );
+
+	 if ( class_exists( 'WooCommerce' ) ) {
+		 require get_theme_file_path( 'inc/kirki/kirki-woocommerce.php' );
+	 }
+
+ }
+
+
+ // Admin stlyes
+
+ require get_theme_file_path( 'inc/admin/admin-functions.php' );
+
+
+
+
+//
+//  $debug_tags = array();
+// add_action( 'all', function ( $tag ) {
+//     global $debug_tags;
+//     if ( in_array( $tag, $debug_tags ) ) {
+//         return;
+//     }
+//     echo "<div>" . $tag . "</div>";
+//     $debug_tags[] = $tag;
+// } );

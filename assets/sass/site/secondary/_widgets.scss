@@ -1,8 +1,24 @@
 .widget {
-	margin: 0 0 1.5em;
+	// margin: 0 0 1.5em;
 
 	/* Make sure select elements fit in widgets. */
 	select {
 		max-width: 100%;
+	}
+}
+
+
+.widget_search {
+	.search-form {
+		position: relative;
+		// display: flex;
+	}
+
+	.search-submit {
+		position: absolute;
+		top: 0;
+		right: 0;
+		font-size: 12px;
+		height: 100%;
 	}
 }

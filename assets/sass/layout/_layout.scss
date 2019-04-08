@@ -1,0 +1,103 @@
+html, body {
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.boxed-layout .site {
+  border: solid 1px rgba(#7e7e7e, 0.25);
+}
+
+.header-top .site-header {
+  border-bottom: solid 1px rgba(#7e7e7e, 0.25);
+}
+
+.site-left-sidebar,
+.header-left .site-header {
+  border-right: solid 1px rgba(#7e7e7e, 0.25);
+}
+
+.site-right-sidebar,
+.header-right .site-header {
+  border-left: solid 1px rgba(#7e7e7e, 0.25);
+}
+
+.site-footer {
+  border-top: solid 1px rgba(#7e7e7e, 0.25);
+}
+
+
+.entry-content {
+  min-height: 60vh;
+}
+
+
+
+// HEADER
+.sticky-wrapper.is-sticky > * {
+  z-index: 199 !important;
+}
+
+.large-device {
+
+  // Sticky
+
+
+  // Fade
+  &.header-fade .site-header {
+    position: relative !important;
+    transition: all .3s;
+  }
+
+  &.header-is-past .site-header {
+    transform: translate3d(0, -100px, 0);
+  }
+
+  &.header-is-fade-in .site-header {
+    position: fixed !important;
+    transform: translate3d(0, 0px, 0);
+  }
+}
+
+.small-device,
+.medium-device {
+
+  &.header-mobile-default {
+    .site-header {
+      position: relative !important;
+    }
+  }
+}
+
+
+// Admin bar fix
+
+.medium-device.admin-bar,
+.large-device.admin-bar {
+
+  .is-sticky .oberon-sticky,
+  .is-sticky .site-header {
+    top: 32px !important;
+  }
+
+}
+
+
+
+// Branding / Designe by
+.designed_by_img {
+  display: inline-block;
+  max-width: 60%;
+  line-height: 0;
+
+  img {
+    display: inline-block;
+    width: 250px;
+    opacity: 0.3;
+    max-height: 30px;
+  }
+
+  img:hover {
+    opacity: 1;
+  }
+}

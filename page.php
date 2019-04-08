@@ -36,5 +36,5 @@ get_header();
 	</div><!-- #primary -->
 
 <?php
-get_sidebar();
+do_action( 'oberon_sidebar' );
 get_footer();

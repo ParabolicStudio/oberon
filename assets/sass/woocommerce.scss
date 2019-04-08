@@ -35,7 +35,10 @@ $woocommerce__color-info: #3D9CD2;
 /**
  * Checkout
  */
+@import "shop/cart";
 @import "shop/checkout";
+@import "shop/account";
+@import "shop/fields";
 
 /**
  * General WooCommerce components
@@ -46,3 +49,48 @@ $woocommerce__color-info: #3D9CD2;
  * WooCommerce widgets
  */
 @import "shop/widgets";
+
+
+// Messages
+
+.woocommerce-error {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.woocommerce-info,
+.woocommerce-error li,
+.woocommerce-message,
+.woocommerce-Message {
+  display: -webkit-flex;
+  width: 100%;
+  align-items: center;
+
+
+  a {
+    color: inherit;
+    text-decoration: underline;
+    order: 1;
+    display: inline-block;
+    float: right;
+    clear: both;
+    margin-left: auto;
+  }
+
+  a:focus,
+
+  a:hover {
+    color: inherit;
+  }
+
+}
+
+.shop_table {
+  border-collapse:collapse;
+
+  tr td {
+    border: 0;
+  }
+}

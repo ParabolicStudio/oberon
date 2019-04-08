@@ -1,0 +1,10 @@
+@media only screen and (max-width: 600px) {
+  #wpadminbar {
+    top: -46px;
+  }
+}
+
+// Beaver builder
+.fl-builder-panel.fl-builder-ui-pinned {
+  z-index: 999 !important;
+}

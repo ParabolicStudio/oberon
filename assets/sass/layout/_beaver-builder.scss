@@ -1,0 +1,60 @@
+.fl-builder {
+
+  .content-area {
+    padding: 0 !important;
+  }
+}
+
+.fl-theme-builder-header {
+  .site-header {
+    padding: 0 !important;
+  }
+}
+
+.fl-builder:not(.lsbr):not(.rsbr) {
+  .site-content .site-content-wrap {
+    max-width: none;
+  }
+}
+
+.fl-builder-edit {
+  .site-header {
+    position: relative !important;
+  }
+}
+
+.fl-builder-content {
+  width: 100%;
+}
+
+.fl-theme-builder-archive,
+.fl-theme-builder-singular {
+
+  .site-content-wrap {
+    max-width: 100%;
+    width: 100%;
+  }
+
+}
+
+.fl-row-content {
+  width: 100%;
+}
+
+
+// Beaver themer fixed-side-header
+// .builder-is-showing-toolbar {
+  .fl-builder-bar-title-icon {
+    display: none !important;
+  }
+// }
+
+
+
+div.fl-post-grid-post {
+  width: 100%;
+}
+
+.fl-rich-text p:first-child:last-child {
+  margin: 0;
+}

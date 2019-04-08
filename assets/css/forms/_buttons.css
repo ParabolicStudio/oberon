@@ -1,0 +1,13 @@
+button,
+.button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  display: inline-block;
+  border: 1px solid;
+  border-radius: 3px;
+  color: rgba(0, 0, 0, 0.8);
+  line-height: 1;
+  padding: .6em 1em .4em;
+  text-align: center;
+  text-decoration: none; }

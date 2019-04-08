@@ -10,6 +10,9 @@
 ?>
 
 <section class="no-results not-found">
+
+	<?php do_action( 'oberon_content_header' ) ?>
+
 	<header class="page-header">
 		<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'oberon' ); ?></h1>
 	</header><!-- .page-header -->
