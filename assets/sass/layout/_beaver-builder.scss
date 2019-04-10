@@ -12,6 +12,7 @@
 }
 
 .fl-builder:not(.lsbr):not(.rsbr) {
+  .site-content .site-wrap,
   .site-content .site-content-wrap {
     max-width: none;
   }

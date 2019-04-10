@@ -97,7 +97,7 @@ add_action( 'after_setup_theme', 'oberon_content_width', 0 );
  * Enqueue scripts and styles.
  */
 function oberon_scripts() {
-	wp_enqueue_style( 'oberon-style', get_stylesheet_uri(), array(), '2.2' );
+	wp_enqueue_style( 'oberon-style', get_stylesheet_uri(), array(), '2.3' );
 
 	if ( !class_exists( 'flbuilder' ) ) {
 		wp_enqueue_style( 'oberon-fontawesome', "https://use.fontawesome.com/releases/v5.8.1/css/all.css" );
