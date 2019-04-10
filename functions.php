@@ -59,11 +59,6 @@ if ( ! function_exists( 'oberon_setup' ) ) :
 			'caption',
 		) );
 
-		// Set up the WordPress core custom background feature.
-		// add_theme_support( 'custom-background', apply_filters( 'oberon_custom_background_args', array(
-		// 	'default-color' => 'ffffff',
-		// 	'default-image' => '',
-		// ) ) );
 
 		// Add theme support for selective refresh for widgets.
 		add_theme_support( 'customize-selective-refresh-widgets' );
@@ -94,27 +89,9 @@ function oberon_content_width() {
 	// This variable is intended to be overruled from themes.
 	// Open WPCS issue: {@link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/issues/1043}.
 	// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
-	$GLOBALS['content_width'] = apply_filters( 'oberon_content_width', 640 );
+	$GLOBALS['content_width'] = apply_filters( 'oberon_content_width', 700 );
 }
 add_action( 'after_setup_theme', 'oberon_content_width', 0 );
-
-/**
- * Register widget area.
- *
- * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
- */
-// function oberon_widgets_init() {
-// 	register_sidebar( array(
-// 		'name'          => esc_html__( 'Sidebar', 'oberon' ),
-// 		'id'            => 'sidebar-1',
-// 		'description'   => esc_html__( 'Add widgets here.', 'oberon' ),
-// 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-// 		'after_widget'  => '</section>',
-// 		'before_title'  => '<h2 class="widget-title">',
-// 		'after_title'   => '</h2>',
-// 	) );
-// }
-// add_action( 'widgets_init', 'oberon_widgets_init' );
 
 /**
  * Enqueue scripts and styles.
@@ -138,10 +115,7 @@ function oberon_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'oberon_scripts' );
 
-/**
- * Implement the Custom Header feature.
- */
-// require get_template_directory() . '/inc/custom-header.php';
+
 
 /**
  * Custom template tags for this theme.
@@ -222,10 +196,10 @@ if ( class_exists( 'flbuilder' ) && class_exists( 'FLThemeBuilder' ) ) {
 
 
  // Admin stlyes
-
  require get_theme_file_path( 'inc/admin/admin-functions.php' );
 
-
+ // Remove Admin Color Scheme.
+ remove_action('admin_color_scheme_picker', 'admin_color_scheme_picker');
 
 
 //

@@ -4,7 +4,7 @@ Theme URI: http://underscores.me/
 Author: Parabolic
 Author URI: https://parabolic.studio/
 Description: Custom WordPress + Beaver builder theme
-Version: 1.0.0
+Version: 1.0.1
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: oberon
@@ -483,8 +483,8 @@ hr {
 }
 
 ul, ol {
-  margin: 0 0 1.5em 1.5em;
-  padding-left: 1.5em;
+  margin: 0 0 1em .5em;
+  padding-left: 1em;
 }
 
 ul {
@@ -830,6 +830,13 @@ body.popup-menu-active.popup-menu-fade .oberon-popup-menu {
   padding: 0;
 }
 
+.site a.edit::after {
+  content: '\f044';
+  font-family: "Font Awesome 5 Free" !important;
+  font-weight: 300 !important;
+  margin-left: 5px;
+}
+
 /*--------------------------------------------------------------
 # Accessibility
 --------------------------------------------------------------*/
@@ -941,15 +948,20 @@ body.popup-menu-active.popup-menu-fade .oberon-popup-menu {
 }
 
 .widget_search .search-form {
-  position: relative;
+  width: 100%;
+}
+
+.widget_search label {
+  width: 100%;
+}
+
+.widget_search .search-field {
+  width: 100%;
+  font-size: 12px !important;
 }
 
 .widget_search .search-submit {
-  position: absolute;
-  top: 0;
-  right: 0;
-  font-size: 12px;
-  height: 100%;
+  display: none;
 }
 
 /*--------------------------------------------------------------

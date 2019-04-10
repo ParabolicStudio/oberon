@@ -1,3 +1,11 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,900');
+
+body {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  letter-spacing: 1px ;
+}
+
 input[type=checkbox], input[type=color], input[type=date], input[type=datetime-local], input[type=datetime], input[type=email],
 input[type=month], input[type=number], input[type=password], input[type=radio], input[type=search], input[type=tel],
 input[type=text], input[type=time], input[type=url], input[type=week], select, textarea {
@@ -14,13 +22,13 @@ body,
 }
 
 
-// Layout
-#wpbody-content > .wrap {
-  max-width: 1100px;
-  margin: auto;
-  float: none;
-  // padding-top: 2rem;
-}
+// // Layout
+// .post-type-page #wpbody-content > .wrap {
+//   max-width: 1100px;
+//   margin: auto;
+//   float: none;
+//   // padding-top: 2rem;
+// }
 
 
 // Boxes
@@ -127,7 +135,7 @@ body #publishing-action {
   padding: 0 !important;
 
   .acf-gallery {
-    height: 300px !important;
+    // height: 300px !important;
   }
 
   .acf-gallery-add {
@@ -213,3 +221,239 @@ body #publishing-action {
 
 
 // Beaver builder
+
+
+
+// Woocommerce checkout field editor
+#message.thwcfd-notice {
+  display: none !important;
+}
+
+// MENU
+
+
+
+#adminmenu, #adminmenu .wp-submenu, #adminmenuback, #adminmenuwrap {
+  width: 190px;
+}
+#wpcontent, #wpfooter {
+  margin-left: 190px;
+  // margin-right: 20px;
+}
+
+// @media screen and (max-width: 782px) {
+//   #wpcontent, #wpfooter {
+//     margin-right: 9px;
+//   }
+// }
+
+#adminmenu .wp-submenu {
+  left: 190px;
+}
+
+@media (min-width: 782px) and (min-width: 960px) {
+  body.auto-fold .edit-post-layout__content {
+    margin-left: 190px;
+  }
+
+  .auto-fold .edit-post-header {
+    left: 190px;
+  }
+}
+
+#adminmenu {
+
+  li:not(:hover) .wp-menu-image {
+    opacity: 0.75;
+  }
+
+  .wp-menu-name {
+    font-weight: 300;
+  }
+
+  a:hover .wp-menu-name {
+    font-weight: 400;
+  }
+}
+
+.wp-has-current-submenu .wp-submenu {
+  li * {
+    font-size: .9em !important;
+  }
+
+  li::before {
+    content: "—";
+    float: left;
+    vertical-align: middle;
+    padding: 5px 5px 5px 10px;
+    color: #ccc;
+  }
+}
+
+#adminmenu li.wp-menu-separator {
+  height: 10px;
+}
+
+
+
+// Colors
+$admin_menu_color: #25282F;
+$admin_link_bg_color: #4857b4;
+$admin_link_color: #5781ec;
+$admin_link_hover_color: #473dfa;
+
+
+#adminmenu, #adminmenu .wp-submenu, #adminmenuback, #adminmenuwrap {
+  background: $admin_menu_color;
+}
+
+
+a, #adminmenu .wp-submenu a:focus,
+#adminmenu .wp-submenu a:hover,
+#adminmenu a:hover, #adminmenu li.menu-top>a:focus,
+#adminmenu li.menu-top:hover,
+#adminmenu li.opensub>a.menu-top,
+#adminmenu li>a.menu-top:focus,
+#adminmenu li a:focus div.wp-menu-image:before,
+#adminmenu li.opensub div.wp-menu-image:before,
+#adminmenu li:hover div.wp-menu-image:before,
+.wrap .add-new-h2, .wrap .add-new-h2:active, .wrap .page-title-action, .wrap .page-title-action:active,
+#wpadminbar .ab-top-menu>li.hover>.ab-item,
+#wpadminbar.nojq .quicklinks .ab-top-menu>li>.ab-item:focus,
+#wpadminbar:not(.mobile) .ab-top-menu>li:hover>.ab-item,
+#wpadminbar:not(.mobile) .ab-top-menu>li>.ab-item:focus,
+.components-button.is-tertiary, .wp-core-ui .button-link,
+#wpadminbar .quicklinks .ab-sub-wrapper .menupop.hover>a,
+#wpadminbar .quicklinks .menupop ul li a:focus,
+#wpadminbar .quicklinks .menupop ul li a:focus strong,
+#wpadminbar .quicklinks .menupop ul li a:hover,
+#wpadminbar .quicklinks .menupop ul li a:hover strong,
+#wpadminbar .quicklinks .menupop.hover ul li a:focus,
+#wpadminbar .quicklinks .menupop.hover ul li a:hover,
+#wpadminbar .quicklinks .menupop.hover ul li div[tabindex]:focus,
+#wpadminbar .quicklinks .menupop.hover ul li div[tabindex]:hover,
+#wpadminbar li #adminbarsearch.adminbar-focused:before,
+#wpadminbar li .ab-item:focus .ab-icon:before,
+#wpadminbar li .ab-item:focus:before, #wpadminbar li a:focus .ab-icon:before,
+#wpadminbar li.hover .ab-icon:before, #wpadminbar li.hover .ab-item:before,
+#wpadminbar li:hover #adminbarsearch:before,
+#wpadminbar li:hover .ab-icon:before,
+#wpadminbar li:hover .ab-item:before,
+#wpadminbar.nojs .quicklinks .menupop:hover ul li a:focus,
+#wpadminbar.nojs .quicklinks .menupop:hover ul li a:hover,
+#wpadminbar:not(.mobile)>#wp-toolbar a:focus span.ab-label,
+#wpadminbar:not(.mobile)>#wp-toolbar li:hover span.ab-label,
+#wpadminbar>#wp-toolbar li.hover span.ab-label,
+html .wp-full-overlay-footer .devices button.active:hover,
+html #customize-controls .control-section .accordion-section-title:focus,
+html #customize-controls .control-section .accordion-section-title:hover,
+html #customize-controls .control-section.open .accordion-section-title,
+html #customize-controls .control-section:hover>.accordion-section-title,
+html #customize-outer-theme-controls .control-section .accordion-section-title:focus:after,
+html #customize-outer-theme-controls .control-section .accordion-section-title:hover:after,
+html #customize-outer-theme-controls .control-section.open .accordion-section-title:after,
+html #customize-outer-theme-controls .control-section:hover>.accordion-section-title:after,
+html #customize-theme-controls .control-section .accordion-section-title:focus:after,
+html #customize-theme-controls .control-section .accordion-section-title:hover:after,
+html #customize-theme-controls .control-section.open .accordion-section-title:after,
+html #customize-theme-controls .control-section:hover>.accordion-section-title:after,
+html .customize-panel-back:focus,
+html .customize-panel-back:hover,
+html .customize-section-back:focus,
+html .customize-section-back:hover,
+.media-frame a {
+  color: $admin_link_color;
+}
+
+a:hover, #collapse-button:hover, .wp-core-ui .button-link:hover {
+  color: $admin_link_hover_color;
+}
+
+#adminmenu .wp-has-current-submenu .wp-submenu .wp-submenu-head, #adminmenu .wp-menu-arrow,
+#adminmenu .wp-menu-arrow div, #adminmenu li.current a.menu-top, #adminmenu li.wp-has-current-submenu a.wp-has-current-submenu,
+.folded #adminmenu li.current.menu-top, .folded #adminmenu li.wp-has-current-submenu,
+.wrap .add-new-h2:hover, .wrap .page-title-action:hover,
+#adminmenu li a.wp-has-current-submenu .update-plugins, #adminmenu li.current a .awaiting-mod,
+.components-button.is-primary, .wp-core-ui .button-primary,
+html .customize-control-kirki-background .background-attachment .buttonset .switch-input:checked + .switch-label,
+html .customize-control-kirki-background .background-size .buttonset .switch-input:checked + .switch-label,
+html .customize-control-kirki-radio-buttonset .buttonset .switch-input:checked + .switch-label,
+.customize-control-kirki-toggle input:checked + .switch:after {
+  background: $admin_link_bg_color;
+}
+
+.components-button.is-primary:focus:enabled, .components-button.is-primary:hover,
+.wp-core-ui .button-primary.focus, .wp-core-ui .button-primary.hover,
+.wp-core-ui .button-primary:focus, .wp-core-ui .button-primary:hover {
+  background: $admin_link_hover_color;
+  border-color:  $admin_link_hover_color;
+}
+
+.wrap .add-new-h2:hover, .wrap .page-title-action:hover,
+.components-button.is-primary,
+html .customize-control-kirki-palette input[type="radio"]:checked + label,
+html .wp-full-overlay-footer .devices button.active:hover,
+html .wp-full-overlay-footer .devices button:focus, {
+  border-color:  $admin_link_color !important;
+}
+
+html #customize-controls .control-section .accordion-section-title:focus,
+html #customize-controls .control-section .accordion-section-title:hover,
+html #customize-controls .control-section.open .accordion-section-title,
+html #customize-controls .control-section:hover>.accordion-section-title,
+html .customize-panel-back:focus,
+html .customize-panel-back:hover,
+html .customize-section-back:focus,
+html .customize-section-back:hover {
+  border-left-color:  $admin_link_color !important;
+}
+
+
+
+// Customizer
+
+#customize-sidebar-outer-content,
+.wp-full-overlay-sidebar,
+.wp-full-overlay-sidebar .wp-full-overlay-header,
+.customize-controls-close,
+.expanded .wp-full-overlay-footer,
+#customize-preview,
+.wp-full-overlay-footer .devices {
+  background-color: #F4F6F8;
+  box-shadow: none;
+}
+
+.wp-full-overlay-sidebar-content {
+  padding: 10px;
+}
+
+#customize-preview {
+
+
+  iframe {
+    margin: 15px;
+    width: calc(100% - 30px);
+    height: calc(100% - 30px);
+    box-shadow: 2px 1px 5px 2px rgba(94, 109, 122, 0.75);
+    border-radius: 3px;
+  }
+}
+
+#accordion-section-themes,
+#theme-builder-header-footer-message,
+#accordion-section-jetpack_content_options {
+  display: none !important;
+}
+
+// Controles
+
+
+.wp-picker-container {
+  // text-align: center;
+  padding: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+
+  button {
+    margin-bottom: 0 !important;
+  }
+}

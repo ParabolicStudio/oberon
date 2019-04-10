@@ -1,0 +1,9 @@
+.site a.edit {
+
+  &::after {
+    content: '\f044';
+    @include fontawesome_ragular;
+    margin-left: 5px;
+  }
+
+}

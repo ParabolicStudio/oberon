@@ -28,7 +28,12 @@
 	width: map-get( $columns, $numberColumns ) - ( ( $columns__margin * ( $numberColumns - 1 ) ) / $numberColumns );
 }
 
-@mixin fontawesome {
+@mixin fontawesome_solid {
 	font-family: "Font Awesome 5 Free" !important;
-	font-weight: 900;
+	font-weight: 800 !important;
+}
+
+@mixin fontawesome_ragular {
+	font-family: "Font Awesome 5 Free" !important;
+	font-weight: 300 !important;
 }

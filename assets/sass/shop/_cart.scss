@@ -36,7 +36,6 @@ body.woocommerce-cart {
     tr.cart_item {
       position: relative;
       display: flex;
-      // flex-wrap: wrap;
       width: 100%;
       justify-content: space-between;
       align-items: center;
@@ -78,7 +77,7 @@ body.woocommerce-cart {
       }
 
       a::after {
-        @include fontawesome;
+        @include fontawesome_solid;
         content: "\f057";
         color: rgba(#aaa, 0.65);
         font-size: 24px;
@@ -225,7 +224,6 @@ body.large-device.woocommerce-cart {
     > div {
       flex-basis: 100%;
     }
-
   }
 
   div.woocommerce-cart-form {
@@ -244,13 +242,10 @@ body.large-device.woocommerce-cart {
   &.admin-bar .cart_totals {
     top: 54px;
   }
-
 }
 
 
 // Emtry charset
-
-
 .cart-empty,
 .cart-empty + .return-to-shop {
   text-align: center;

@@ -239,7 +239,7 @@ div.product .woocommerce-product-gallery .flex-control-nav {
 
 		&::before {
 			content: "\f07a";
-			@include fontawesome;
+			@include fontawesome_solid;
 			padding-right: .5rem;
 			font-size: 1.2em;
 			vertical-align: baseline;
@@ -286,7 +286,7 @@ div.product .woocommerce-product-gallery .flex-control-nav {
 		padding: .5rem;
 
 		content: "\f065";
-		@include fontawesome;
+		@include fontawesome_solid;
 		font-size: 25px;
 		line-height: 25px;
 		font-weight: 300;

@@ -53,11 +53,10 @@
 	.woocommerce-billing-fields__field-wrapper .required::after {
 		display: inline-block;
 		content: "\f069";
-		@include fontawesome;
+		@include fontawesome_solid;
 		font-size: .7rem !important;
 		line-height: .5rem;
 		vertical-align: super;
-		font-weight: 300 !important;
 	}
 
 }
@@ -186,10 +185,11 @@ li.wc_payment_method {
 .woocommerce-account,
 .woocommerce-checkout {
 
-	.woocommerce-form__label-for-checkbox input,
+	#ship-to-different-address input,
 	.create-account input,
   input[type="radio"],
-	#shipping_method input {
+	#shipping_method input,
+	.woocommerce-form-login .woocommerce-form__input {
     display: none !important;
   }
 
@@ -206,9 +206,9 @@ li.wc_payment_method {
 	.create-account span::before,
 	#shipping_method input + label::before {
 		display: inline-block;
-    content: "\f641";
-    font-size: 26px;
-    @include fontawesome;
+    content: "\f111";
+    font-size: 22px;
+    @include fontawesome_ragular;
     transition: all .3s;
     vertical-align: middle;
     padding-right: 5px;
@@ -224,7 +224,7 @@ li.wc_payment_method {
   input[type="radio"]:checked + label::before,
 	#shipping_method input:checked + label::before,
 	#shipping_method input[type="hidden"] + label::before {
-    content: "\f058";
+    content: "\f192";
     opacity: 1;
   }
 }

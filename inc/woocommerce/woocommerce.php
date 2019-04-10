@@ -29,7 +29,7 @@ add_action( 'after_setup_theme', 'oberon_woocommerce_setup' );
  * @return void
  */
 function oberon_woocommerce_scripts() {
-	wp_enqueue_style( 'oberon-woocommerce-style', get_template_directory_uri() . '/woocommerce.css', array(), '3.1' );
+	wp_enqueue_style( 'oberon-woocommerce-style', get_template_directory_uri() . '/woocommerce.css', array(), '3.3' );
 
 	$font_path   = WC()->plugin_url() . '/assets/fonts/';
 	$inline_font = '@font-face {

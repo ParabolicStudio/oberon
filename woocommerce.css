@@ -9,9 +9,9 @@ WooCommerce styles override
 /**
  * Imports
  */
-/**
- * Shop tables
- */
+/*--------------------------------------------------------------
+# Shop tables
+--------------------------------------------------------------*/
 /**
  * Shop tables
  */
@@ -50,9 +50,9 @@ table.shop_table_responsive tr td {
     table.shop_table_responsive tr td:before {
       display: none; } }
 
-/**
- * Products
- */
+/*--------------------------------------------------------------
+# Store products styles
+--------------------------------------------------------------*/
 /**
  * Products
  */
@@ -152,9 +152,9 @@ ul.products {
   -ms-flex-preferred-size: 12.5%;
   flex-basis: 12.5%; }
 
-/**
- * Single product
- */
+/*--------------------------------------------------------------
+ # Single product styles
+ --------------------------------------------------------------*/
 /**
  * Single Product
  */
@@ -360,7 +360,7 @@ div.product .woocommerce-product-gallery .flex-control-nav {
   .single_add_to_cart_button::before {
     content: "\f07a";
     font-family: "Font Awesome 5 Free" !important;
-    font-weight: 900;
+    font-weight: 800 !important;
     padding-right: .5rem;
     font-size: 1.2em;
     vertical-align: baseline; }
@@ -387,7 +387,7 @@ div.product .woocommerce-product-gallery .flex-control-nav {
     padding: .5rem;
     content: "\f065";
     font-family: "Font Awesome 5 Free" !important;
-    font-weight: 900;
+    font-weight: 800 !important;
     font-size: 25px;
     line-height: 25px;
     font-weight: 300; }
@@ -417,9 +417,9 @@ div.woocommerce-tabs ul.wc-tabs a {
   padding: 10px;
   outline: none; }
 
-/**
- * Checkout
- */
+/*--------------------------------------------------------------
+# Cart styles
+--------------------------------------------------------------*/
 body.woocommerce-cart {
   overflow-x: visible;
   overflow-y: visible; }
@@ -491,7 +491,7 @@ body.woocommerce-cart {
       line-height: 24px; }
     body.woocommerce-cart .woocommerce-cart-form .product-remove a::after {
       font-family: "Font Awesome 5 Free" !important;
-      font-weight: 900;
+      font-weight: 800 !important;
       content: "\f057";
       color: rgba(170, 170, 170, 0.65);
       font-size: 24px; }
@@ -607,6 +607,9 @@ body.large-device.woocommerce-cart.admin-bar .cart_totals {
   -ms-flex-preferred-size: 100%;
   flex-basis: 100%; }
 
+/*--------------------------------------------------------------
+# Checkout styles
+--------------------------------------------------------------*/
 /**
  * Checkout
  */
@@ -650,11 +653,10 @@ body.large-device.woocommerce-cart.admin-bar .cart_totals {
     display: inline-block;
     content: "\f069";
     font-family: "Font Awesome 5 Free" !important;
-    font-weight: 900;
+    font-weight: 800 !important;
     font-size: .7rem !important;
     line-height: .5rem;
-    vertical-align: super;
-    font-weight: 300 !important; }
+    vertical-align: super; }
 
 .woocommerce-privacy-policy-text {
   text-align: justify;
@@ -752,18 +754,21 @@ li.wc_payment_method .payment_box {
     margin: 0;
     padding: 0; }
 
-.woocommerce-cart .woocommerce-form__label-for-checkbox input,
+.woocommerce-cart #ship-to-different-address input,
 .woocommerce-cart .create-account input,
 .woocommerce-cart input[type="radio"],
 .woocommerce-cart #shipping_method input,
-.woocommerce-account .woocommerce-form__label-for-checkbox input,
+.woocommerce-cart .woocommerce-form-login .woocommerce-form__input,
+.woocommerce-account #ship-to-different-address input,
 .woocommerce-account .create-account input,
 .woocommerce-account input[type="radio"],
 .woocommerce-account #shipping_method input,
-.woocommerce-checkout .woocommerce-form__label-for-checkbox input,
+.woocommerce-account .woocommerce-form-login .woocommerce-form__input,
+.woocommerce-checkout #ship-to-different-address input,
 .woocommerce-checkout .create-account input,
 .woocommerce-checkout input[type="radio"],
-.woocommerce-checkout #shipping_method input {
+.woocommerce-checkout #shipping_method input,
+.woocommerce-checkout .woocommerce-form-login .woocommerce-form__input {
   display: none !important; }
 
 .woocommerce-cart .woocommerce-form__label-for-checkbox span,
@@ -794,10 +799,10 @@ li.wc_payment_method .payment_box {
 .woocommerce-checkout .create-account span::before,
 .woocommerce-checkout #shipping_method input + label::before {
   display: inline-block;
-  content: "\f641";
-  font-size: 26px;
+  content: "\f111";
+  font-size: 22px;
   font-family: "Font Awesome 5 Free" !important;
-  font-weight: 900;
+  font-weight: 300 !important;
   -webkit-transition: all .3s;
   -o-transition: all .3s;
   transition: all .3s;
@@ -825,7 +830,7 @@ li.wc_payment_method .payment_box {
 .woocommerce-checkout input[type="radio"]:checked + label::before,
 .woocommerce-checkout #shipping_method input:checked + label::before,
 .woocommerce-checkout #shipping_method input[type="hidden"] + label::before {
-  content: "\f058";
+  content: "\f192";
   opacity: 1; }
 
 p.form-row input.woocommerce-form__input-checkbox {
@@ -931,6 +936,9 @@ p.form-row input.woocommerce-form__input-checkbox {
   -ms-flex-preferred-size: 100%;
   flex-basis: 100%; }
 
+/*--------------------------------------------------------------
+# Account styles
+--------------------------------------------------------------*/
 .woocommerce-MyAccount-navigation ul {
   padding: 0;
   margin: 0;
@@ -945,7 +953,7 @@ p.form-row input.woocommerce-form__input-checkbox {
 .woocommerce-MyAccount-navigation a::after {
   display: inline-block;
   font-family: "Font Awesome 5 Free" !important;
-  font-weight: 900;
+  font-weight: 800 !important;
   content: "\f138";
   float: right;
   width: 1.5rem;
@@ -1044,14 +1052,23 @@ p.form-row input.woocommerce-form__input-checkbox {
   margin-right: 5px;
   margin-bottom: 5px; }
 
+.woocommerce-button.view::before {
+  content: '\f06e';
+  padding-right: 5px;
+  font-family: "Font Awesome 5 Free" !important;
+  font-weight: 300 !important; }
+
+/*--------------------------------------------------------------
+# Shop Fields styles
+--------------------------------------------------------------*/
 input.input-text.qty {
   width: 3em;
   padding-right: 0;
   padding-left: 0; }
 
-/**
+/*--------------------------------------------------------------
  * General WooCommerce components
- */
+--------------------------------------------------------------*/
 /**
  * Header cart
  */
@@ -1246,9 +1263,9 @@ p.no-comments {
     left: 0;
     display: block; } }
 
-/**
+/*--------------------------------------------------------------
  * WooCommerce widgets
- */
+--------------------------------------------------------------*/
 /**
  * WooCommerce Price Filter
  */

@@ -70,7 +70,8 @@ Kirki::add_field( 'oberon', [
   'output'      => [
     [
       'element' => '.woocommerce-info,
-                    .woocommerce-noreviews, p.no-comments',
+                    .woocommerce-noreviews, p.no-comments,
+                    .woocommerce-message',
       'property' => 'background-color',
     ],
   ],
